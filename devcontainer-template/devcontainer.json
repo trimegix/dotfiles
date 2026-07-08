@@ -1,0 +1,33 @@
+{
+  // 👉 1. Nomme ton projet (juste un libellé affiché dans VS Code).
+  "name": "CHANGE-ME",
+  "build": { "dockerfile": "Dockerfile" },
+
+  // 👉 2. Installe les dépendances du projet au 1er démarrage.
+  //     Node   : "npm install"
+  //     Python : "pip install -r requirements.txt"
+  "postCreateCommand": "npm install",
+
+  // 👉 3. Ports à exposer vers l'hôte (optionnel — décommente si besoin).
+  //     Vite = 5173, Next = 3000, Flask = 5000…
+  //     Rappel : lance le serveur avec --host pour qu'il soit joignable.
+  // "forwardPorts": [5173],
+
+  // Persiste l'authentification Claude entre les rebuilds (tu ne te reconnectes
+  // qu'une fois par projet). Volume nommé : initialisé depuis le contenu + les
+  // droits de l'image à sa 1re création, n'expose rien de la machine hôte.
+  // 👉 4. RENOMME le volume par projet : source=<projet>-claude
+  //     (chaque projet garde son auth isolée).
+  "mounts": [
+    "source=CHANGE-ME-claude,target=/home/node/.claude,type=volume"
+  ],
+
+  // Extensions VS Code installées DANS le conteneur (optionnel).
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint"]
+    }
+  },
+
+  "remoteUser": "node"
+}
