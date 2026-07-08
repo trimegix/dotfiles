@@ -7,3 +7,7 @@ alias serve='ruby -run -e httpd . -p 8000' # Or python -m SimpleHTTPServer :)
 
 # NOTE: On Q3 2021, Le Wagon decided to change the Web Dev curriculum default text editor
 alias stt="echo 'Launching VS Code instead of Sublime Text... (cf ~/.aliases)' && code ."
+
+# Démarrer PostgreSQL à la demande (au lieu de le lancer à chaque ouverture de terminal)
+alias pgstart='sudo service postgresql start'
+alias pgstop='sudo service postgresql stop'

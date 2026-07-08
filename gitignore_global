@@ -1,0 +1,25 @@
+# .gitignore GLOBAL — s'applique à TOUS mes dépôts.
+# Ici : uniquement ce qui est propre à MA machine / MES outils, jamais pertinent pour un projet.
+# Le spécifique-projet (node_modules, .next, .env, dist…) va dans le .gitignore DU projet.
+
+# ── macOS ──
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# ── Windows ──
+Thumbs.db
+ehthumbs.db
+desktop.ini
+*:Zone.Identifier
+
+# ── Linux ──
+*~
+
+# ── Fichiers temporaires d'éditeurs (Vim / Emacs / sauvegardes) ──
+*.swp
+*.swo
+*.bak
+\#*\#
+.\#*
